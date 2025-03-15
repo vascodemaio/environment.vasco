@@ -85,6 +85,75 @@ tib_b = tibble(
 )
 tib_b
 
+tib_b %>%
+  mutate(sample = gsub('sam', 'sample', sample))
+
+tib_b %>%
+  group_by(category)
+
+tib_b
+
+tib_b %>%
+  group_by(category) %>%
+  mutate(members = n())
+
+tib_b %>%
+  group_by(category) %>%
+  summarise(members = n())
+
+write_tsv(tib_b, file = "test_tibble.tsv")
+tib_copy <- read_tsv("test_tibble.tsv")
+tib_copy
+
+tib_copy%>%
+  group_by(category) %>%
+
+  tib_copy
+
+for(number in tib_b$measure){
+  res = number * 2
+  print (res)
+}
+
+tib_d = tibble(
+  campione = c("cam1", "cam2", "cam3"),
+  misura = c(333, 444, 555),
+  bono = c("se", "nah", "nah")
+)
+
+tib_d
+
+tib_d %>% 
+  group_by(campione) %>% 
+  summarise(campione = n())
+tib_d
+
+
+
+tib_d %>% 
+  group_by(campione) %>% 
+  mutate(members = n())
+
+
+
+tib_e = tibble(
+  nome = c ("sam1", "sam2", "sam3"),
+  valore = c(333, 444, 555),
+  valido = c("si", "no", "no")
+)
+
+
+tib_e%>% 
+  group_by(valido)
+
+tib_e%>% 
+  group_by(valido) %>% 
+  summarise(membrivalido = n())
+
+for(number in tib_e$valore){
+  res = number * 2
+  print(res)
+}
 
 
 
@@ -92,6 +161,15 @@ tib_b
 
 
 
+tib_s = tibble(
+  unom = c("unos", "dos", "tres"),
+  uvalor = c(45, 56, 67),
+  avalid = c("se", "na", "se")
+)
+
+
+tib_e %>% 
+  group_by(avalid)
 
 
 
