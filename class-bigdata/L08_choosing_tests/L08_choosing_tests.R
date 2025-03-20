@@ -1,5 +1,6 @@
 
-
+library(tidyverse)
+library(infer)
 ###################
 # chi-square test
 ###################
@@ -71,7 +72,7 @@ chisq_base = chisq.test(
 
 chisq_base
 
-tidy(chisq_base)
+
 
 
 
@@ -273,7 +274,7 @@ ggplot(bloodTestsData, aes(x=sugar, y=insulin, colour = individual_group))+
   facet_wrap(~individual_group)
 
 ### the relationship seems very clear, let's see when we run a linear regression in the traditional way
-
+library(broom)
 linear_model = glm(insulin~sugar, data = bloodTestsData, family = "gaussian")
 tidy(linear_model)
 

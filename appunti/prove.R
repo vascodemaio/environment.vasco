@@ -170,6 +170,127 @@ tib_s = tibble(
 
 tib_e %>% 
   group_by(avalid)
+(
+library(tidyverse)
+
+
+for(numeros in tib_s$uvalor){
+  yea  = numeros *2
+  print(yea)
+}
+
+
+moltiplicax <- function(x){
+  vettoren = vector()
+  for(val in x){
+    new = val*3
+    vettoren = c(vettoren, new)
+  }
+  return(val)
+}
+
+increase <- function(x){
+  # create an empty vector
+  newvector <<- vector()
+  # loop over the input
+  for (val in x){
+    new = val *3
+    # append the value into new vector
+    newvector <<- c(newvector, new)
+  }
+  # return as result this new vector
+  return(newvector)
+}
+
+ciola = c(1,2,3,4)
+
+ciola %>% 
+  moltiplicax
+
+newciola = moltiplicax(ciola)
+
+nnamo <- function(x){
+  nvettore <<- vector()
+  for(val in x){
+    new = val * 3
+    nvettore <<- c(nvettore, new)
+  }
+  return(nvettore)
+}
+ciolina = c(2,3,4,5)
+newciolina = nnamo(ciolina)
 
 
 
+aggiungi <- function(x){
+  vetore <<- vector()
+  for(val in x){
+    new = val + 5 - 3
+    vetore = c(vetore, new)
+  }
+  return(vetore)
+}
+
+
+agciolina = ciolina %>% 
+  aggiungi()
+
+aumentos = function(x){
+  new = x+3
+  return(new)
+}
+
+gio = c(1,3,5,7)
+
+giogio = lapply(gio, aumentos)
+
+
+
+
+lista = list(
+  a = c(1,2,3),
+  b = c("a", "b", "c"),
+  c = c(3,4,5)
+)
+
+vectore <- unlist (lista)
+vectore
+
+
+listas = list(
+  a = c(1,2,3,4),
+  b = c(3,4,5,6),
+  c = c(4,5,6,7)
+  
+)
+
+listas[1]
+
+
+
+mean3 = lapply (listas, mean)
+
+for(val in listas){
+  new = mean(val)
+  print (new)
+}
+i = c(1:3)
+for(val in cio){
+  mean2 = mean(listas[val])
+  print(mean2)
+for (val in cio){
+  print(val)
+}  
+  
+print(i)
+cio = c(1:3)
+print (cio)
+
+
+for(val in cio){
+  mean2 = mean(listas[val])
+  print(mean2)
+2
+
+mean2
+mean1
