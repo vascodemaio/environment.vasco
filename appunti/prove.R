@@ -294,3 +294,62 @@ for(val in cio){
 
 mean2
 mean1
+
+
+library(tidyverse)
+
+dataplot = measurements %>% 
+  pivot_longer(
+    cols = c(time01, time02, time03),
+    names_to = "timepoint",
+    values_to = "value"
+  )
+
+dataplot
+
+ggplot(dataplot, aes(x=timepoint, y=value, colour=sample))+
+  geom_point()+
+  geom_smooth()
+
+dataplot$time <- as.numeric(factor(dataplot$timepoint))
+
+ggplot(dataplot, aes(x=timepoint, y=value, colour=sample))+
+  geom_point()+
+  geom_smooth()+
+  facet_wrap(sample~., ncol = 2)
+
+set.seed(345)
+samplesize = 10  
+pop_mean = 5
+pop_variance = 4
+
+norm_dists <- replicate(10000, rnorm(samplesize, mean = pop_mean, sd = sqrt(pop_variance)))
+
+chi_stat <- function(variance){
+  stat = ((samplesize-1)*variance)/pop_variance
+  return(stat)
+}
+
+variances <- apply(norm_dists, 2, var)
+chisquares <- unlist(lapply(variances, chi_stat))
+hist(chisquares, main = "Distribution of Chi Square", xlab = "Chi Square value", freq = FALSE)
+
+
+
+
+
+yeaa = rnorm(1000, 5, 1)
+
+hist(yeaa, main ="a caso", xlab = "bella li", freq = FALSE)
+hist(rnorm(100))
+
+
+hist(rnorm(1000))
+curve(dnorm(x, mean = 0, sd = 1), add = TRUE, col = "blue", lwd = 2)
+
+x = rnorm(1000, mean = 5, sd =1)
+hist(x)
+curve(dnorm(x, mean = mean(x), sd= sd(x)), add=TRUE, col = "red", lwd = 3 )
+
+
+
