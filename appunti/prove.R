@@ -296,6 +296,8 @@ mean2
 mean1
 
 
+##lez5
+
 library(tidyverse)
 
 dataplot = measurements %>% 
@@ -350,6 +352,8 @@ curve(dnorm(x, mean = 0, sd = 1), add = TRUE, col = "blue", lwd = 2)
 x = rnorm(1000, mean = 5, sd =1)
 hist(x)
 curve(dnorm(x, mean = mean(x), sd= sd(x)), add=TRUE, col = "red", lwd = 3 )
+
+
 
 
 
