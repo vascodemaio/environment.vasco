@@ -76,4 +76,19 @@ babynames %>%
     nname = n_distinct(name)
     )
 
+###excercise 1 minimum year
+babynames %>% 
+  summarise
+
+### excercise 2
+
+babynames %>% 
+  group_by(year) %>% 
+  summarise(n_chldren = sum(year)
+  ) %>% 
+  ggplot(aes(x=year, y=base_cat_counts))
+
+
+
+
 

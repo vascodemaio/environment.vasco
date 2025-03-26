@@ -1,6 +1,6 @@
 ### READR functions
 ### how to look at a function's options
-
+library(tidyverse)
 formals(read_tsv)
 
 names(formals(read_tsv))
@@ -31,7 +31,7 @@ identical(
 data = url("https://raw.githubusercontent.com/lescai-teaching/class-bigdata-2023/main/L11_data_import-export/L11_dataset_babynames.rds")
 
 ## one can read from the web
-nimbus = read_csv(data)
+nimbus = read_csv("L11_dataset_nimbus.csv")
 ## or alternatively reaad it locally
 
 
@@ -56,7 +56,7 @@ nimbus %>% pluck("ozone") %>% unique()
 
 ## let's add an option
 
-nimbus = read_csv(data, na = ".")
+nimbus = read_csv("L11_dataset_nimbus.csv", na = ".")
 
 nimbus
 
@@ -65,7 +65,7 @@ nimbus %>% pluck("ozone") %>% class()
 
 ## we can manually specify the column types
 
-nimbus = read_csv(data, 
+nimbus = read_csv("L11_dataset_nimbus.csv", 
 					na = ".",
 					col_types = list(
                     ozone = col_double()

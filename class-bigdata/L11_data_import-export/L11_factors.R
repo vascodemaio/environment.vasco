@@ -94,3 +94,17 @@ factorData %>%
   summarise(
     base_cat_count = sum(counts)
   )
+
+
+factorData %>% 
+  mutate(
+    base = fct_collapse(base,
+                        compl_1 = c("A", "T"),
+                        compl_2 = c("G", "C")
+    )
+  ) %>% 
+  group_by(base) %>% 
+  summarise(
+    base_cat_count = sum(counts)
+  )
+  
