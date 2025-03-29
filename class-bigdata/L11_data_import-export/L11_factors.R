@@ -1,4 +1,4 @@
-
+library(tidyverse)
 ## we can create a factor with the function factor()
 ## the argument x represents the data
 ## the levels argument defines the attribute

@@ -357,3 +357,37 @@ curve(dnorm(x, mean = mean(x), sd= sd(x)), add=TRUE, col = "red", lwd = 3 )
 
 
 
+babynames %>% 
+  summarise(
+    firstyear = min(year),
+    lastyear = max(year),
+    total = sum(n)
+  )
+
+
+nuovo = babynames %>% 
+  group_by(year)
+
+babynames %>% 
+  group_by(year) %>% 
+  summarise(n_children = sum(n)) %>% 
+  ggplot() + 
+  geom_line(aes(x = year, y = n_children))
+
+babynames %>%
+  group_by(year) %>%
+  summarise(n_children = sum(n)) %>%
+  ggplot() +
+  geom_line(aes(x = year, y = n_children))
+
+
+
+rm(ls())
+rm(babynames)
+rm(nuovo)
+
+
+sbu <- factor(x = c("y", "e", "a", "a", "a"),
+              levels = c("y", "e", "a"))
+sbu
+unclass(sbu)
