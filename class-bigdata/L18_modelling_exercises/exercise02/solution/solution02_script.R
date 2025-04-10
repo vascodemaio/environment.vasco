@@ -49,7 +49,7 @@ logreg_wf_prediction %>%
   conf_mat(truth = metastasis_risk, estimate = .pred_class)
 
 
-
+###not using multinomial gives us only 2 classes (low/medium) high gets exlcluded
 
 rf_model <- rand_forest(
   trees = 2000,
